@@ -1,0 +1,144 @@
+body {
+height: 100vh;
+background: linear-gradient(#ff00cc,#333399);
+margin: 0%;
+display: flex;
+justify-content: center;
+align-items: center;
+position: relative;
+}
+
+.galeri{
+    height: 20rem;
+    width: 50rem;
+    display: flex;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    gap: 1rem
+    
+}
+.galeri > div {
+    flex: 1;
+     border-radius: 1rem;
+     background-position: center; 
+     background-repeat: no-repeat; 
+     background-size: cover;
+     transition: flex 0.8s cubic-bezier(0.25, 0.4, 0.45, 1.4);
+}
+.galeri > div:hover{
+    flex: 5;
+}
+.heart  {
+    font-size: 200px;
+    color: red;
+    animation: heart 1.5s infinite ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 103%;
+    left: 35%;
+    
+    }
+    @keyframes heart{
+        0%{
+            transform: rotateY(0) translate(0);
+            transform: scale(1);
+            transform-origin: center center;
+            transition-timing-function: ease-out;
+        }
+        10%{
+            transform: scale(0.90);
+            transition-timing-function: ease-in;
+        }
+        17%{
+            transform: scale(0.95);
+            transition-timing-function: ease-out;
+        }
+        33%{
+            transform: scale(0.85);
+            transition-timing-function: ease-in;
+        }
+        45%{
+            transform: scale(1);
+            transition-timing-function: ease-out;
+        }
+    }
+    .image-container {
+        height: 20rem;
+        width: 50rem;
+        display: flex;
+        position: relative; /* Изменили на relative */
+        overflow: hidden; /* Hide overflowing content */
+        flex: 1;
+        border-radius: 1rem;
+        background-position: center; 
+        background-repeat: no-repeat; 
+        background-size: cover;
+        transition: flex 0.8s cubic-bezier(0.25, 0.4, 0.45, 1.4);
+    }
+    
+    .image-container:hover {
+        flex: 5;
+    }
+    
+    .overlay-text {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+        color: white;
+        text-align: center;
+        padding: 10px;
+        transform: translateY(100%);
+        transition: transform 0.3s ease; /* Smooth transition for appearing */
+    }
+    
+    .image-container:hover .overlay-text {
+        transform: translateY(0);
+    }
+    .popup-text.show {
+        display: block;
+    }
+    .heart {
+        font-size: 250px; /* Размер большого сердца */
+        cursor: pointer;
+    }
+    
+    .popup-text {
+        width: 52%;
+        position: fixed;
+        top: 115%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 0px;
+        border-radius: 10px;
+        display: none;
+    }
+    .heart-small {
+        width: 20px;
+        height: 20px;
+        background: red;
+        border-radius: 50%;
+        position: absolute;
+        animation: animateHeart 1.5s infinite ease-in-out;
+        opacity: 0;
+    }
+    
+    @keyframes animateHeart {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.5);
+        }
+        100% {
+            transform: scale(1);
+            opacity: 0;
+        }
+    }
